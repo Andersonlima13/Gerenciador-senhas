@@ -1,27 +1,92 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+/* Reset de estilos */
+body, h1, h2, ul {
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+h2 {
+  font-size: 20px;
+  margin: 20px 0 10px;
+}
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.label {
+  font-size: 16px;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input[type="number"],
+input[type="checkbox"] {
+  width: 100%;
+  padding: 5px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #0073e6;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #005bad;
+}
+
+#passwordDisplay {
+  font-size: 18px;
+  text-align: center;
+  margin: 20px 0;
+}
+
+#savedPasswordsList {
+  list-style: none;
+  padding: 0;
+}
+
+#savedPasswordsList li {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+/* Responsividade */
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+  button {
+    font-size: 14px;
+  }
+  #passwordDisplay {
+    font-size: 16px;
+  }
 }
