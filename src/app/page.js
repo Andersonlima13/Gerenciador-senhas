@@ -1,5 +1,6 @@
+"use client"
 import React, { useState } from 'react';
-import './App.css';
+import './globals.css';
 
 const Home = () => {
   const [savedPasswords, setSavedPasswords] = useState([]);
@@ -17,14 +18,19 @@ const Home = () => {
   };
 
   const generatePassword = (length, useSpecialChars) => {
-    let charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-    if (useSpecialChars) {
-      charset += '!@#$%^&*()_+';
-    }
+    const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+    const specialChars = '!@#$%^&*()_+';
+    const allChars = useSpecialChars ? charset + specialChars : charset;
 
     if (length > 7) {
-      const passwordArray = Array.from({ length }, () => charset[Math.floor(Math.random() * charset.length)]);
-      return passwordArray.join('');
+      const regex = new RegExp(`[${allChars}]`);
+      let password = '';
+
+      while (!regex.test(password)) {
+        password = Array.from({ length }, () => allChars[Math.floor(Math.random() * allChars.length)]).join('');
+      }
+
+      return password;
     } else {
       window.alert('A senha deve conter no mínimo 8 caracteres!');
       return '';
