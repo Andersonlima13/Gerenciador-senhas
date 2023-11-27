@@ -1,60 +1,74 @@
+import React, { useState } from 'react';
+import './App.css';
 
+const Home = () => {
+  const [savedPasswords, setSavedPasswords] = useState([]);
 
-export default function Home() {
+  const savePassword = (password) => {
+    if (password === '') {
+      window.alert('Gere uma senha antes de salvar!');
+    } else {
+      setSavedPasswords([...savedPasswords, password]);
+    }
+  };
 
-  let savedPasswords = [];
-
- /* function savePassword(password) {
-  if (password == [""]){
-    window.alert("Gere Uma Senha Antes De Salvar!")  
-  }else{
-    savedPasswords.push(password)
-  }
-  
-  
-  }
-
-  function getSavedPasswords() {
+  const getSavedPasswords = () => {
     return savedPasswords;
-  }
+  };
 
-
-
-  function generatePassword(length, useSpecialChars) {
+  const generatePassword = (length, useSpecialChars) => {
     let charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
     if (useSpecialChars) {
       charset += '!@#$%^&*()_+';
     }
-    const passwordArray = Array.from({ length }, () => charset[Math.floor(Math.random() * charset.length)]);
+
     if (length > 7) {
-    return passwordArray.join('')}
-    else{
-      window.alert("A senha Deve conter no mínimo 8 caracteres!")
+      const passwordArray = Array.from({ length }, () => charset[Math.floor(Math.random() * charset.length)]);
+      return passwordArray.join('');
+    } else {
+      window.alert('A senha deve conter no mínimo 8 caracteres!');
+      return '';
     }
-   }
-*/
+  };
 
   return (
     <main className="top">
       <div>
         <h1>Gerador de senha</h1>
-        <label for="passwordLength">Comprimento da Senha:</label> 
-        <input type="number" id="passwordLength" value="12"></input>
-        <label for="useSpecialChars">Incluir caracteres especiais:</label>
+        <label htmlFor="passwordLength">Comprimento da Senha:</label>
+        <input type="number" id="passwordLength" defaultValue="12"></input>
+        <label htmlFor="useSpecialChars">Incluir caracteres especiais:</label>
         <input type="checkbox" id="useSpecialChars"></input>
-        <button id="generateButton">Gerar Senha</button>
+        <button
+          id="generateButton"
+          onClick={() => {
+            const length = document.getElementById('passwordLength').value;
+            const useSpecialChars = document.getElementById('useSpecialChars').checked;
+            const generatedPassword = generatePassword(length, useSpecialChars);
+            document.getElementById('passwordDisplay').innerText = generatedPassword;
+          }}
+        >
+          Gerar Senha
+        </button>
         <div id="passwordDisplay"></div>
-        <button id="saveButton">Salvar Senha</button>
+        <button
+          id="saveButton"
+          onClick={() => {
+            const passwordToSave = document.getElementById('passwordDisplay').innerText;
+            savePassword(passwordToSave);
+          }}
+        >
+          Salvar Senha
+        </button>
         <h2>Senhas Salvas</h2>
-        <ul id="savedPasswordsList"></ul>
-  
-
+        <ul id="savedPasswordsList">
+          {savedPasswords.map((password, index) => (
+            <li key={index}>{password}</li>
+          ))}
+        </ul>
       </div>
     </main>
+  );
+};
 
-
-  )
-}
-
-//export { generatePassword };
-//export { savePassword, getSavedPasswords };
+export default Home;
