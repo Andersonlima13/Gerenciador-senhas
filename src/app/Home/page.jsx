@@ -1,7 +1,7 @@
 "use client";
-
+import "../globals.css"
 import React, { useState } from 'react';
-
+import Main from "../page.js"
 
 const Home = () => {
   const [savedPasswords, setSavedPasswords] = useState([]);
@@ -40,6 +40,7 @@ const Home = () => {
 
   return (
     <main className="top">
+      <Main/>
       <div>
         <h1> gerador de senhas</h1>
         <label htmlFor="passwordLength">Comprimento da Senha:</label>

@@ -1,8 +1,8 @@
 /* Reset de estilos */
+
 .container {
   max-width: 1000px; /* Defina a largura máxima desejada para o container */
-  margin: 0 auto; /* Centralize o container na página */
-  padding: 20px; /* Adicione preenchimento ao container para espaçamento interno */
+
   background-color: #fff;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
@@ -14,8 +14,6 @@ body,
 h1,
 h2,
 ul {
-  margin: 0;
-  padding: 0;
 }
 
 body {
