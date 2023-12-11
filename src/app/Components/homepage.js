@@ -2,9 +2,53 @@
 
 import React from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
+
+
+const PasswordManager = styled.div`
+  align-items:center
+  padding:5px;
+  justify-content:center;
+  flex-direction:center;
+  background:cyan;`
+
+
+const Icon = styled.div`
+  margin-left:3px;
+  border-radius:40px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:yellow;
+  cursor:pointer;`
+
+
+const InputContainer = styled.div`
+  margin-right:100px;
+  display:flex;
+  margin-left:200px;
+  background-color:green;
+  padding:10px;
+  width: 60%;
+  height: 10vh;
+  `
+
+const SearchPassword = styled.input`
+  font-size: 40px;
+  width:95%;
+  height:95%;
+  background-color:red`
+
+const Passwords = styled.h1`
+  `
+
+const PasswordContainer = styled.div`
+  display:flex;
+  background-color:gray;`
 
 const Button = styled.button`
-  margin-top: 40px;
+  margin-top: 12px;
   margin-left: 20px;
   width: 60%;
   height: 30%;
@@ -70,9 +114,11 @@ const RightBox = styled.div`
 `;
 
 const BottomBox = styled.div`
-  width: 90%; /* Ajuste para uma largura maior na parte inferior */
+  width: 93%;
+  height: 100vh;
   background-color: #fff;
   padding: 15px;
+  border-radius:20px;
 `;
 
 const ContainerPage = () => {
@@ -84,7 +130,19 @@ const ContainerPage = () => {
                 <Button>CLIQUE E SABA MUITO</Button></LeftBox>
         <RightBox>Conteúdo da Div à Direita</RightBox>
       </TopRow>
-      <BottomBox>Conteúdo da Div Inferior</BottomBox>
+      <BottomBox>
+        <PasswordContainer>
+          <Passwords>Senhas Salvas</Passwords>
+          <InputContainer>
+            <SearchPassword/>
+            <Icon><FontAwesomeIcon icon={faSearch}/></Icon>
+            
+
+          </InputContainer>
+          <PasswordManager><Button>adicionar senhas</Button> <Button>adicionar senhas</Button></PasswordManager>
+          
+        </PasswordContainer>
+      </BottomBox>
     </MainContainer>
   );
 };
