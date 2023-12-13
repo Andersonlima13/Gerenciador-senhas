@@ -114,12 +114,19 @@ const RightBox = styled.div`
 `;
 
 const BottomBox = styled.div`
-  width: 93%;
+  width: 95%;
   height: 100vh;
   background-color: #fff;
-  padding: 15px;
+  border:4px solid red;
+  margin-bottom:10px;
   border-radius:20px;
 `;
+
+const Footer = styled.div`
+  margin-top:40px;
+  width: 100%;
+  height: 40vh;
+  background-color:green;`
 
 const ContainerPage = () => {
   return (
