@@ -7,7 +7,7 @@ import Link from "next/link"
 
 const Container = styled.div`
   height: 60px;
-  background-color:red;
+  background-color:#ad21cc;
  
 `;
 
@@ -32,7 +32,7 @@ const Logotipo = styled.span`
   padding-left : 15px;
   font-size: 28px;
   cursor: pointer;
-  text-shadow: 1px 1px 2px #e61543;
+  text-shadow: white 2px 2px 15px;
   font-weight: bold;
  
 `;
@@ -40,13 +40,14 @@ const Logotipo = styled.span`
 
 
 const Center = styled.div`
+  cursor:pointer;
   flex: 1;
   display:flex;
 `;
 
 const Logo = styled.h1`
   font-weight: bold;
-  text-shadow: 1px 1px 2px #e61543;
+  text-shadow: white 2px 2px 15px;
   padding:10px;
   font-size:20px;
   

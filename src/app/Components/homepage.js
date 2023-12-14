@@ -5,42 +5,61 @@ import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
+const PasswordList = styled.div`
+  background-color:red;`
+
+
+const Botao = styled.div`
+  width:40%;
+  height:30vh;
+`
 
 const PasswordManager = styled.div`
   align-items:center
   padding:5px;
   justify-content:center;
   flex-direction:center;
-  background:cyan;`
+  `
 
 
 const Icon = styled.div`
+  width:5%;
+  background-color:black;
+  box-shadow: 2px 2px 15px 4px #ad21cc;
+  color:white;
   margin-left:3px;
-  border-radius:40px;
   display:flex;
   align-items:center;
   justify-content:center;
-  background:yellow;
   cursor:pointer;`
 
 
 const InputContainer = styled.div`
+  border-radius:20px;
   margin-right:100px;
   display:flex;
   margin-left:200px;
-  background-color:green;
+  background-color:#3d3140;
+  margin-top:2px;
   padding:10px;
-  width: 60%;
-  height: 10vh;
+  width: 50%;
+  height: 8vh;
   `
 
 const SearchPassword = styled.input`
+  box-shadow: 2px 2px 15px 4px #ad21cc;
+  border:None;
+  color:white;
   font-size: 40px;
   width:95%;
   height:95%;
-  background-color:red`
+  background-color:black`
 
 const Passwords = styled.h1`
+  font-size:30px;
+  width:5%;
+  text-shadow: #ad21cc 2px 2px 15px;
+  margin-left:40px;
   `
 
 const PasswordContainer = styled.div`
@@ -54,24 +73,28 @@ const Button = styled.button`
   height: 30%;
   cursor : pointer ;
   border: 2px solid;
-  background-color: transparent;
+  background-color: #a378ac;
   border-radius:20px;
   font-weight:bold;
   &:hover{
-      background-color: #ee2853;
+      background-color: #ad21cc;
       transform: scale(1.1);
       transition-property:background-color;
       transition-duration: 1000ms;
     }
   `
 
+
 const Welcome = styled.h1`
-    margin-left:20px;
+  text-shadow: #ad21cc 2px 2px 15px;
+  margin-left:20px;
   `
 const Text = styled.div`
+  text-shadow: #ad21cc 2px 2px 15px;
+  flex-direction:column;
+  display-flex;
   font-weight:bold;
   padding-top:20px;
-  background-color:gray;
   height: 10vh;
   width: 75%;
   margin-top:20px;
@@ -80,7 +103,7 @@ const Text = styled.div`
   `
 
 const MainContainer = styled.div`
-  background-color: blue;
+  background-color: black;
   height: 100vh;
   width: 100%;
   padding-top: 40px;
@@ -96,9 +119,11 @@ const TopRow = styled.div`
 `;
 
 const LeftBox = styled.div`
-  width: 48%;
+  background-color: #fff;
+  box-shadow: 2px 2px 15px 4px #ad21cc;
+  width: 42%;
   height: 50vh;
-  background-color: yellow;
+  background-color: #ffff;
   padding: 15px;
   margin-bottom: 20px;
   margin-right:10px;
@@ -106,36 +131,35 @@ const LeftBox = styled.div`
 `;
 
 const RightBox = styled.div`
-  width: 48%;
-  background-color: green;
+  background-color: #fff;
+  box-shadow: 2px 2px 15px 4px #ad21cc;
+  width: 42%;
   padding: 15px;
   margin-bottom: 20px;
   border-radius:20px;
 `;
 
 const BottomBox = styled.div`
+  box-shadow: 2px 2px 15px 4px #ad21cc;
   width: 95%;
   height: 100vh;
   background-color: #fff;
-  border:4px solid red;
   margin-bottom:10px;
   border-radius:20px;
 `;
 
-const Footer = styled.div`
-  margin-top:40px;
-  width: 100%;
-  height: 40vh;
-  background-color:green;`
 
 const ContainerPage = () => {
   return (
     <MainContainer>
       <TopRow>
-        <LeftBox><Welcome>Bem vindo usuário!</Welcome>
-                <Text>Seja bem vindo ao site blablabla mantenha suas senhas salvas e seguras aqui tlg? lorem ipsum dolor lorem ipsum and the lorem of text of meaning</Text>
-                <Button>CLIQUE E SABA MUITO</Button></LeftBox>
-        <RightBox>Conteúdo da Div à Direita</RightBox>
+        <LeftBox><Welcome>Bem vindo!</Welcome>
+                <Text>Gerencie suas senhas e crie chaves aleatórias em um só lugar </Text>
+                <Botao> <Button>Gerar Senha</Button></Botao>
+              
+               
+        </LeftBox>
+        <RightBox>HISTORICO DAS SENHAS GERADAS AQUII!</RightBox>
       </TopRow>
       <BottomBox>
         <PasswordContainer>
@@ -146,9 +170,9 @@ const ContainerPage = () => {
             
 
           </InputContainer>
-          <PasswordManager><Button>adicionar senhas</Button> <Button>adicionar senhas</Button></PasswordManager>
-          
+          <PasswordManager><Button>ADICIONAR SENHA</Button> <Button>REMOVER SENHA</Button></PasswordManager>        
         </PasswordContainer>
+        <PasswordList>senhas serao geradas aqui</PasswordList>
       </BottomBox>
     </MainContainer>
   );
