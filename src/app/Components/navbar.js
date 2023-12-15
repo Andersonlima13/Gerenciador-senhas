@@ -8,6 +8,8 @@ import Link from "next/link"
 const Container = styled.div`
   height: 60px;
   background-color:#ad21cc;
+  display:flex;
+
  
 `;
 
@@ -15,12 +17,11 @@ const Wrapper = styled.div`
   padding: 10px 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
  
 `;
 
 const Left = styled.div`
-  flex: 1;
+  justify-content:center;
   display: flex;
   align-items: center;
   font-weight:bold;
@@ -28,7 +29,6 @@ const Left = styled.div`
 `;
 
 const Logotipo = styled.span`
-  flex-direction: column;
   padding-left : 15px;
   font-size: 28px;
   cursor: pointer;
@@ -46,9 +46,11 @@ const Center = styled.div`
 `;
 
 const Logo = styled.h1`
+  justify-content:center;
+  align-items:center;
   font-weight: bold;
   text-shadow: white 2px 2px 15px;
-  padding:10px;
+  padding:40px;
   font-size:20px;
   
 `;
@@ -86,12 +88,12 @@ const NavBar = () => {
     <Container>
     <Wrapper>
       <Left>
-          <Logotipo> <FontAwesomeIcon icon={faKey}/> Gerenciador De Senhas</Logotipo>
+          <Logotipo> PassWordManager <FontAwesomeIcon icon={faKey}/></Logotipo>
       </Left>
       <Center>
           <Logo> Gerar senhas </Logo>
           <Logo> Senhas Salvas</Logo>
-          <Logo> Histórico </Logo>
+          <Logo> Senhas Geradas </Logo>
       </Center>
       <Right> 
           <Menu><FontAwesomeIcon icon={faUser}/> </Menu>

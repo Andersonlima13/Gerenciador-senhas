@@ -23,8 +23,9 @@ const PasswordManager = styled.div`
 
 
 const Icon = styled.div`
-  width:5%;
-  background-color:black;
+  border-radius:15px;
+  width:10%;
+  background-color:transparent;
   box-shadow: 2px 2px 15px 4px #ad21cc;
   color:white;
   margin-left:3px;
@@ -47,13 +48,14 @@ const InputContainer = styled.div`
   `
 
 const SearchPassword = styled.input`
+  border-radius:5px;
   box-shadow: 2px 2px 15px 4px #ad21cc;
   border:None;
   color:white;
   font-size: 40px;
   width:95%;
   height:95%;
-  background-color:black`
+  background-color:transparent;`
 
 const Passwords = styled.h1`
   font-size:30px;
@@ -64,7 +66,7 @@ const Passwords = styled.h1`
 
 const PasswordContainer = styled.div`
   display:flex;
-  background-color:gray;`
+`
 
 const Button = styled.button`
   margin-top: 12px;
