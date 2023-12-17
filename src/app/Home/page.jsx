@@ -40,7 +40,6 @@ const Home = () => {
 
   return (
     <main className="top">
-      <Main/>
       <div>
         <h1> gerador de senhas</h1>
         <label htmlFor="passwordLength">Comprimento da Senha:</label>
